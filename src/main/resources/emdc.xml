@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<emdc>
+    <backup class = "com.teacher.backup.BackupImpl">
+        <rootpath>D:\\code\\IODemo\\emdc</rootpath>
+        <clientSendEnvs>client_send_envs.bak</clientSendEnvs>
+        <gatheredLines>gathered_lines.bak</gatheredLines>
+        <storeEnvs>store_envs.bak</storeEnvs>
+    </backup>
+
+    <client class = "com.teacher.client.ClientImpl">
+        <ip>127.0.0.1</ip>
+    </client>
+
+    <server class = "com.teacher.server.ServerImpl">
+        <port>45678</port>
+    </server>
+
+    <gather class = "com.teacher.gather.GatherImpl">
+        <radwtmp>D:\\code\\IODemo\\emdc\\radwtmp</radwtmp>
+    </gather>
+
+    <store class = "com.teacher.store.StoreImpl">
+        <driver>com.mysql.cj.jdbc.Driver</driver>
+        <!--rewriteBatchedStatements=true，表示增加效率-->
+        <url>jdbc:mysql://127.0.0.1:8017/emdc?rewriteBatchedStatements=true</url>
+        <user>root</user>
+        <password>root</password>
+        <batchSize>1000</batchSize>
+    </store>
+</emdc>
